@@ -6,7 +6,7 @@ on:
 
 jobs:
   destroy:
-    runs-on: ubuntu-latest
+    runs-on: Default
     steps:
       - name: Git checkout
         uses: actions/checkout@v2

@@ -11,7 +11,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: Default
     steps:
       - name: Git checkout
         uses: actions/checkout@v1
