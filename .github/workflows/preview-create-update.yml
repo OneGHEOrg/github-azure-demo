@@ -57,6 +57,8 @@ jobs:
           target_url: "https://${{ steps.output.outputs.hostname }}"
           environment: ${{ github.head_ref }}
           ref: ${{ github.head_ref }}
+      - name: install Yarn
+         run: npm install -g yarn
       - name: yarn build
         run: |
           yarn

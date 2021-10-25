@@ -52,6 +52,9 @@ jobs:
           target_url: "https://${{ secrets.AZURE_WEBAPP_NAME }}.azurewebsites.net"
           environment: demo
 
+      - name: Install Yarn
+        run: npm install -g yarn
+
       - name: yarn build
         run: |
           yarn
