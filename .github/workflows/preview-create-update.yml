@@ -58,7 +58,7 @@ jobs:
           environment: ${{ github.head_ref }}
           ref: ${{ github.head_ref }}
       - name: install Yarn
-         run: npm install -g yarn
+        run: npm install -g yarn
       - name: yarn build
         run: |
           yarn
