@@ -1,6 +1,6 @@
 locals {
   environment = get_env("ENVIRONMENT", "preview")
-  branch      = get_env("BRANCH", "master")
+  branch      = get_env("BRANCH", "install-terraform")
 }
 
 remote_state {
@@ -10,6 +10,7 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
   config = {
+    resource_group_name  = "github-workshop"
     storage_account_name = "githubworkshop"
     container_name       = "tfstate"
     key                  = "${local.environment}/${local.branch}/${path_relative_to_include()}-terraform.tfstate"
