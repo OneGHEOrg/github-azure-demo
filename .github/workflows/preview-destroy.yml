@@ -12,7 +12,6 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
-      - name: Setup Terraform
       - name: Setup Terragrunt
         uses: autero1/action-terragrunt@v1.1.1
         with:
