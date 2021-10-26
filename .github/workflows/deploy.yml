@@ -27,6 +27,12 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      - name: Setup Terraform 
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.0.9
+          terraform_wrapper: false
+
       - name: Setup Terragrunt
         uses: autero1/action-terragrunt@v1.1.1
         with:
@@ -51,6 +57,9 @@ jobs:
           token: "${{ github.token }}"
           target_url: "https://${{ secrets.AZURE_WEBAPP_NAME }}.azurewebsites.net"
           environment: demo
+
+      - name: Install Yarn
+        run: npm install -g yarn
 
       - name: yarn build
         run: |
