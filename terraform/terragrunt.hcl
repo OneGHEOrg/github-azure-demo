@@ -1,6 +1,6 @@
 locals {
   environment = get_env("ENVIRONMENT", "preview")
-  branch      = get_env("BRANCH", "master")
+  branch      = get_env("BRANCH", "test")
 }
 
 remote_state {
