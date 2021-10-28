@@ -26,6 +26,8 @@ jobs:
 
       - run: |
           echo $SHELL
+          nvm --version
+          node --version
           yarn
           yarn coverage
           bash <(curl -s https://codecov.io/bash)
