@@ -31,6 +31,7 @@ jobs:
           yarn
           yarn coverage
           bash <(curl -s https://codecov.io/bash)
+        shell: bash
   lint:
     runs-on: self-hosted
     steps:
