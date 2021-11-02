@@ -13,7 +13,9 @@ env:
 
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on:
+      - self-hosted
+      - nodejs-12
     steps:
       - uses: actions/checkout@v1
 
