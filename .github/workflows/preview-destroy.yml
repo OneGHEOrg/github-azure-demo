@@ -6,19 +6,13 @@ on:
 
 jobs:
   destroy:
-    runs-on: ubuntu-latest
+    runs-on:
+      - self-hosted
+      - terraform-1.0
     steps:
       - name: Git checkout
         uses: actions/checkout@v2
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 1.0.9
-          terraform_wrapper: false
-      - name: Setup Terragrunt
-        uses: autero1/action-terragrunt@v1.1.1
-        with:
-          terragrunt_version: v0.31.4
+
       - name: Terragrunt Destroy
         run: yes | terragrunt run-all destroy
         working-directory: ./terraform
