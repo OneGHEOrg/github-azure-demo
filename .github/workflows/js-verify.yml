@@ -19,17 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-#      - name: Setup Node
-#        uses: actions/setup-node@v1
-#        with:
-#          node-version: ${{ env.NODE_VERSION }}
-#      - name: install yarn
-#        run: npm install -g yarn
-
       - run: |
-#          echo $SHELL
-#          nvm --version
-#          node --version
           yarn
           yarn coverage
           bash <(curl -s https://codecov.io/bash)
@@ -42,14 +32,6 @@ jobs:
       - uses: actions/checkout@v2 # create-pull-request requires v2
         with:
           ref: ${{ github.head_ref }}
-
-#      - name: Setup Node
-#        uses: actions/setup-node@v1
-#        with:
-#          node-version: ${{ env.NODE_VERSION }}
-
-#      - name: install yarn
-#        run: npm install -g yarn
 
       - run: |
           yarn
